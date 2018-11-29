@@ -80,6 +80,14 @@ class ProductDetailView extends Component {
         <div>가격: {totalPrice}</div>
         <button
           onClick={() => {
+            const { selectedOptionId, quantity } = this.state;
+            if (selectedOptionId === '') {
+              alert('옵션');
+            } else if (quantity < 1) {
+              alert('숫자만');
+            } else {
+              this.props.onCreateCartItem(selectedOptionId, quantity);
+            }
             this.props.onCreateCartItem(
               this.state.selectedOptionId,
               this.state.quantity

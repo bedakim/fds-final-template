@@ -38,11 +38,19 @@ export default class ProductDetail extends Component {
       loading: false,
     });
   }
+  //서버 장바구니에 항목을 추가하는 함수
+  handleCreatCartItem = async (optionId, quantity) => {
+    //...
+    alert(`장바구니 테스트, ${optionId}, ${quantity}`);
+  };
 
   render() {
     return (
       <div>
-        <ProductDetailView {...this.state} />
+        <ProductDetailView
+          onCreateCartItem={this.handleCreatCartItem}
+          {...this.state}
+        />
       </div>
     );
   }

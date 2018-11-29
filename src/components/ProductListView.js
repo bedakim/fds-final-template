@@ -20,7 +20,7 @@ class ProductListView extends Component {
       <div>
         {products.map(p => (
           <div key={p.id}>
-            <div>{p.ib}</div>
+            <div>{p.id}</div>
             <div>{p.title}</div>
             <img src={p.imgURL} alt={p.title} />
           </div>

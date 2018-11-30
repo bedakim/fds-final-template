@@ -12,8 +12,15 @@ export default class ProductList extends Component {
     };
   }
 
+  //얘를 건드려야함
+  //
   async componentDidMount() {
-    const { data: products } = await api.get('/products');
+    const { category } = this.props;
+    const { data: products } = await api.get('/products', {
+      params: {
+        category,
+      },
+    });
     this.setState({
       products,
       loading: false,
